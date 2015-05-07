@@ -1,3 +1,4 @@
+module.exports = { 
 // PUT YOUR CODE HERE!!!
 //Homework for underscore lab 2. 
 // -- this function works but not how we were supposed to set it up. 
@@ -29,13 +30,22 @@
 
 
 //MAP -- here i began setting up the functions correctly
-var _ = {
 	map: function(num, func){
+		if(!func){
+			return "you need to pass in a function"
+			//this isn't the best way to give error messages
+			//this is an ex to show the use case for another 'it' statement wi test
+		}
+		//make a new result array 
 		var outputArray = [];
+		//loop through array
 		for (var i = 0; i < num.length; i++){
-            outputArray.push(func(num[i]);
+			//apply func to each value in arr
+			var value= func(num[i]);
+			//add new value to new array
+			outputArray.push (value);
 			}
-     return outputArray; 
+     return outputArray;
 	},
 //_.map([1, 2, 3], function(num){ return num * 3; });
 //_.map(["dogs", "before", "cats"], function(str){ return str.toUpperCase(); });
@@ -56,3 +66,4 @@ console.log(evens);
 
 //_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 //=> [2, 4, 6]
+}

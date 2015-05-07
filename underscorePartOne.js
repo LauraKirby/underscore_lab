@@ -1,5 +1,14 @@
+module.exports = { 
 // average - returns the average value in a given array
-// _.average([4,6,1,1])
+	average: function(arr){
+		sum = 0;
+		for (var i = 0; i < arr.length; i++){
+            sum += parseInt( arr[i], 10 );
+			}
+     return sum/arr.length; 
+	}
+};
+ //_.average([4,6,1,1])
 // => 3
 
 // contains - returns true is a given value is present in an array
